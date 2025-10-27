@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    h1= title
+    button#payBtn Pay Rs 1000
+
+  script(src="https://checkout.razorpay.com/v1/checkout.js")
+  script.
+    $('#payBtn').click(async function() {
+      const res = await fetch('/create-order', { method: 'POST' });
+      const order = await res.json();
+
+      const options = {
+        key: "#{process.env.RAZORPAY_KEY_ID}",
+        amount: order.amount,
+        currency: order.currency,
+        name: "Demo Payment",
+        order_id: order.id,
+        handler: async function (response) {
+          await fetch('/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(response)
+          }).then(r => r.text()).then(html => {
+            document.body.innerHTML = html;
+          });
+        }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    });

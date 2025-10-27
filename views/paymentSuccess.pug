@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .container
+    h1= title
+    p Payment ID: #{payment.paymentId}
+    p Order ID: #{payment.orderId}
+    p Amount: Rs #{payment.amount}
+    p Status: #{payment.status}

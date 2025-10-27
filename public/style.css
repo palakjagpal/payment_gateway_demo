@@ -1,0 +1,105 @@
+/* General Body and Layout Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9; /* Light, neutral background */
+    color: #333; /* Standard dark text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Start content from the top */
+    min-height: 100vh; /* Full viewport height */
+    padding-top: 50px; /* Space from the top */
+    cursor: pointer;
+}
+
+/* Container for main content */
+.container {
+    background-color: #ffffff; /* White card background */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft, professional shadow */
+    padding: 40px;
+    width: 100%;
+    max-width: 450px; /* Constrain width for better readability */
+    text-align: center;
+}
+
+/* Heading Styling */
+h1 {
+    color: #1a1a1a; /* Darker heading color */
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0; /* Subtle separator */
+    padding-bottom: 15px;
+}
+
+/* --- */
+
+/* Button Styling (index.pug - #payBtn) */
+#payBtn {
+    background-color: #4A90E2; /* Primary blue color (common for payments/CTAs) */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+#payBtn:hover {
+    background-color: #357ABD; /* Slightly darker blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#payBtn:active {
+    transform: scale(0.99);
+}
+
+/* --- */
+
+/* Payment Success Page Styling (paymentSuccess.pug) */
+
+/* Paragraph text for success details */
+p {
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+/* Highlighting the labels and values */
+p:last-child {
+    border-bottom: none; /* Remove border from the last item */
+    padding-bottom: 0;
+}
+
+/* Styles for specific data points to make them stand out */
+p strong {
+    color: #1a1a1a;
+    font-weight: 600;
+    display: inline-block;
+    width: 120px; /* Align data points better */
+}
+
+/* Specific styling for the Status line */
+p:last-of-type {
+    font-weight: 700;
+    color: #28a745; /* Green for success status */
+    background-color: #e6ffed;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+    border-bottom: none;
+    box-shadow: 0 1px 3px rgba(40, 167, 69, 0.2);
+}
+
+p:last-of-type strong {
+    color: #28a745;
+}
