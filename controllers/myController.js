@@ -53,6 +53,12 @@ export const verifyPayment = async (req, res) => {
       payment.paymentId = razorpay_payment_id;
       await payment.save();
 
+      return res.status(200).json({ 
+        success: true, 
+        message: "Payment verified successfully", 
+        payment 
+      });
+
       /*res.render("paymentSuccess", { title: "Payment Successful", payment });*/
       res.status("paymentSuccess", { title: "Payment Successful", payment });
 
