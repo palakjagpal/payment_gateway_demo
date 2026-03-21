@@ -2,12 +2,15 @@ import express from "express"
 import dotenv from "dotenv"
 import connectDB  from "./config/db.js"
 import myRoutes from "./routes/myRoutes.js"
-import path from "path"
+import path from "path";
+import cors from "cors";
 
 dotenv.config()
 connectDB()
 
 const app = express()
+
+app.use(cors());
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
