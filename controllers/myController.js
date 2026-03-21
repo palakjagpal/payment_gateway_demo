@@ -60,7 +60,6 @@ export const verifyPayment = async (req, res) => {
       });
 
       /*res.render("paymentSuccess", { title: "Payment Successful", payment });*/
-      res.status("paymentSuccess", { title: "Payment Successful", payment });
 
     } else {
       res.status(400).send("Payment verification failed");

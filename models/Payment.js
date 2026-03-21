@@ -6,7 +6,7 @@ const paymentSchema = new mongoose.Schema({
     status : {type:String, required:true},
     amount : {type:Number, required:true}
 },
-  {timestamp : true }
+  {timestamps : true } 
 )
 
 const Payment = mongoose.model("Payment", paymentSchema)
