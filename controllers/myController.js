@@ -27,13 +27,14 @@ export const createOrder = async (req, res) => {
     await Payment.create({
       orderId: order.id,
       status: "created",
-      amount,
+      amount : 1000,
     });
 
     res.status(200).json(order);
   } catch (error) {
-    console.error(error);
-    res.status(500).send("Error creating order");
+    console.error("BACKEND ERROR",error);
+    /*res.status(500).send("Error creating order");*/
+    res.status(500).json({ error: "Order creation failed", details: error.message });
   }
 };
 
